@@ -37,7 +37,9 @@ defmodule SupaBattleSnake.Endpoint do
   {status, body} =
       case conn.body_params do
         %{"game" => _game_object, "turn" => 0, "board" => _board_object, "you" => _you_object} -> 
-            SupaBattleSnake.store_game(conn.body_params, :start)
+            conn.body_params
+            |> SupaBattleSnake.convert_game_data(:start)
+            |> IO.inspect(label: "route: /start\ngame_data")
             {200, "It Begins!"}
         _ -> {422, "422 - missing game data"}
       end
@@ -51,9 +53,11 @@ defmodule SupaBattleSnake.Endpoint do
   post "/move" do
   {status, body} =
       case conn.body_params do
-        %{"game" => game_object, "turn" => turn_integer, "board" => board_object, "you" => you_object} -> 
-            {200, Poison.encode!( SupaBattleSnake.make_move(game_object, turn_integer, board_object, you_object) )}
-        _ -> { 200, Poison.encode!( SupaBattleSnake.make_default_move(conn.body_params) )}
+        %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
+            move = SupaBattleSnake.optimal_move(conn.body_params, :move)
+            
+            {200, Poison.encode!( move )}
+        _ -> { 200, Poison.encode!( "" )}
       end
 
     send_resp(conn, status, body)
@@ -65,9 +69,11 @@ defmodule SupaBattleSnake.Endpoint do
   post "/end" do
   {status, body} =
       case conn.body_params do
-        %{"game" => _game_object, "turn" => _turn_integer, "board" => _board_object, "you" => _you_object} -> 
+        %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
             conn.body_params
-            |> SupaBattleSnake.store_game(:end)
+            |> SupaBattleSnake.convert_game_data(:end)
+            |> IO.inspect(label: "route: /end\ngame_data")
+            
             {200, "Game End"}
         _ -> { 200, "Game End - missing game data"}
       end
