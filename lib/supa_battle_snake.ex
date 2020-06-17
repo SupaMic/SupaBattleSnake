@@ -87,7 +87,6 @@ defmodule SupaBattleSnake do
     |> convert_game_data(game_state)
     |> IO.inspect(label: "optimal_move converted game_data")
     |> avoid_self()
-    #|> avoid_last_move()
     |> avoid_wall()
     |> avoid_opponents()
     |> determine_move()
@@ -147,20 +146,6 @@ defmodule SupaBattleSnake do
     |> update_legal_moves(:down, you_head, combined_opponent_coords)
     |> update_legal_moves(:left, you_head, combined_opponent_coords)
     
-  end
-  
-  def avoid_last_move(%GameBoard{turn: turn} = game_data) do 
-
-    {:ok, last_move} = MoveAgent.get_turn_move(turn)
-
-    case last_move["move"] do
-      "up" -> remove_option(game_data, :down)
-      "down" -> remove_option(game_data, :up)
-      "left" -> remove_option(game_data, :right)
-      "right" -> remove_option(game_data, :left)
-    end
-    
-    game_data  
   end
   
   def wall_coords(board_height, location) do
