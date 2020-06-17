@@ -5,6 +5,7 @@ defmodule SupaBattleSnake.Endpoint do
   """
   
   use Plug.Router
+  alias SupaBattleSnake.MoveAgent
   
     # This module is a Plug, that also implements it's own plug pipeline, below:
 
@@ -36,10 +37,10 @@ defmodule SupaBattleSnake.Endpoint do
   post "/start" do
   {status, body} =
       case conn.body_params do
-        %{"game" => _game_object, "turn" => 0, "board" => _board_object, "you" => _you_object} -> 
-            conn.body_params
-            |> SupaBattleSnake.convert_game_data(:start)
-            |> IO.inspect(label: "route: /start\ngame_data")
+        %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
+            
+            SupaBattleSnake.optimal_move(conn.body_params, :start)
+            
             {200, "It Begins!"}
         _ -> {422, "422 - missing game data"}
       end
@@ -53,8 +54,10 @@ defmodule SupaBattleSnake.Endpoint do
   post "/move" do
   {status, body} =
       case conn.body_params do
-        %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
-            move = SupaBattleSnake.optimal_move(conn.body_params, :move)
+        %{"game" => _game_object, "turn" => turn_int, "board" => _board_object, "you" => _you_object} -> 
+            {:ok, move} = MoveAgent.get_turn_move(turn_int)
+            
+            SupaBattleSnake.optimal_move(conn.body_params, :move)
             
             {200, Poison.encode!( move )}
         _ -> { 200, Poison.encode!( "" )}

@@ -12,7 +12,8 @@ defmodule SupaBattleSnake.Application do
         scheme: :http,
         plug: SupaBattleSnake.Endpoint,
         options: [port: 4001]
-      )
+      ), 
+      SupaBattleSnake.MoveAgent
       # Starts a worker by calling: SupaBattleSnake.Worker.start_link(arg)
       # {SupaBattleSnake.Worker, arg}
     ]

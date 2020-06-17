@@ -15,6 +15,7 @@ defmodule SupaBattleSnake do
   """
   alias SupaBattleSnake.GameBoard
   alias SupaBattleSnake.Snake
+  alias SupaBattleSnake.MoveAgent
   
   def convert_game_data(%{"game" => %{"id" => game_id, 
                                 "timeout" => timeout_int} = _game_object, 
@@ -87,14 +88,15 @@ defmodule SupaBattleSnake do
     |> convert_game_data(game_state)
     |> IO.inspect(label: "optimal_move converted game_data")
     |> avoid_self()
+    |> avoid_last_move()
     |> avoid_wall()
     |> avoid_opponents()
     |> determine_move()
     
-    %{
+    MoveAgent.set_turn_move(game_data["turn"], %{
         "move" => move, 
-        "shout" => "highly strategic not random move"
-    }
+        "shout" => "moving"
+    })
   end
   
   def determine_move(%GameBoard{up: up, right: right, down: down, left: left} = _game_data) do 
@@ -136,7 +138,7 @@ defmodule SupaBattleSnake do
   
   def avoid_opponents(%GameBoard{snakes: snakes} = game_data) do
     
-    IO.inspect(game_data, label: "avoid_opponents initial game_data")
+    #IO.inspect(game_data, label: "avoid_opponents initial game_data")
     
     you_head = get_you(game_data, :head)
     
@@ -146,20 +148,34 @@ defmodule SupaBattleSnake do
                                   |> update_legal_moves(:down, you_head, snake.body)
                                   |> update_legal_moves(:left, you_head, snake.body)
                                   end ) 
-    |> IO.inspect(label: "avoid_opponents -> Enum.each result")
+    #|> IO.inspect(label: "avoid_opponents -> Enum.each result")
     
     game_data
-    |> IO.inspect(label: "avoid_opponents final game_data")
+    #|> IO.inspect(label: "avoid_opponents final game_data")
     
+  end
+  
+  def avoid_last_move(%GameBoard{turn: turn} = game_data) do 
+
+    {:ok, last_move} = MoveAgent.get_turn_move(turn)
+
+    case last_move["move"] do
+      "up" -> remove_option(game_data, :down)
+      "down" -> remove_option(game_data, :up)
+      "left" -> remove_option(game_data, :right)
+      "right" -> remove_option(game_data, :left)
+    end
+    
+    game_data  
   end
   
   def wall_coords(board_height, location) do
 
     case location do
-      :top -> Enum.map(1..board_height-1, fn x -> %{"x" => x, "y" => 10 } end)
-      :right -> Enum.map(1..board_height-1, fn y -> %{"x" => 10, "y" => y } end)
-      :bottom -> Enum.map(1..board_height-1, fn x -> %{"x" => x, "y" => 1 } end)
-      :left -> Enum.map(1..board_height-1, fn y -> %{"x" => 1, "y" => y } end) 
+      :top -> Enum.map(-1..board_height, fn x -> %{"x" => x, "y" => 11 } end)
+      :right -> Enum.map(-1..board_height, fn y -> %{"x" => 11, "y" => y } end)
+      :bottom -> Enum.map(-1..board_height, fn x -> %{"x" => x, "y" => -1 } end)
+      :left -> Enum.map(-1..board_height, fn y -> %{"x" => -1, "y" => y } end) 
     end
   end
   
@@ -277,103 +293,3 @@ defmodule SupaBattleSnake do
   
   
 end
-
-
-
-  
-  
-  # def avoid_opponents_rule(%GameBoard{snakes: snakes} = game_data) do
-    
-  #   opponent_snakes = snakes
-  #   |> Enum.filter(fn snake -> snake.you == false end)
-  #   |> IO.inspect(label: "opponent_snakes list")
-    
-    
-  #   Enum.map(snakes, fn snake -> check_if_path_in_body(game_data, get_you(game_data, :head), snake.body) end)
-    
-  # end
-  
-  
-  
-  # def is_path_in_body?(%{"x" => _x, "y" => _y} = path, body) do
-  #   find_result = Enum.find(body, fn body_segment -> body_segment == path end)
-  #   IO.inspect(find_result, label: "is_path_in_body?=")
-     
-  #   case find_result do
-  #       nil -> false
-  #       _ -> true
-  #     end
-  # end
-  
-
-  
-  
-  # def wall_rule(%GameBoard{snakes: snakes, you_id: you_id} = game_data) do
-    
-  #   head = get_you(game_data, :head)
-    
-  #   IO.inspect(get_you(game_data), label: "wall_rule - you")
-    
-  #   options = 
-  #     case head["x"] do
-  #         1  -> remove_option(options, :left)
-  #         10 -> remove_option(options, :right)
-  #         _ -> IO.inspect(options, label: "No collision left or right wall")
-  #     end
-    
-  #   IO.inspect(options, label: "wall_rule - options after head_x case")
-    
-  #   options =
-  #     case head["y"] do
-  #         1  -> remove_option(options, :down)
-  #         10 -> remove_option(options, :up)
-  #         _ ->  IO.inspect(options, label: "No collision bottom or top wall")
-  #     end
-      
-  #   IO.inspect(options, label: "wall_rule - options after head_y case")
-    
-  #   Map.put(game_data, :options, options)
-    
-  # end
-  # def check_vertical_path(options, %{"x" => head_x, "y" => head_y} = head, body) do 
-  #   new_options = options
-  #     cond do
-  #       is_path_in_body?(%{"x" => head_x, "y" => head_y+1}, body)  -> remove_option(options, :up)
-  #       is_path_in_body?(%{"x" => head_x, "y" => head_y-1}, body)  -> remove_option(options, :down)
-  #       true -> options
-  #     end
-  # end
-  
-  
-  # def check_horizontal_path(options, %{"x" => head_x, "y" => head_y} = head, body) do 
-  #   new_options = options
-  #     cond do
-  #       is_path_in_body?(%{"x" => head_x+1, "y" => head_y}, body)  -> remove_option(options, :right)
-  #       is_path_in_body?(%{"x" => head_x-1, "y" => head_y}, body)  -> remove_option(options, :left)
-  #       true -> options
-  #     end
-  # end
- 
-  # def avoid_self_rule(%GameBoard{snakes: snakes, you_id: you_id, options: options} = game_data) do
-  
-  #   head = get_you(%GameBoard{snakes: snakes, you_id: you_id}, :head)
-  #   body = get_you(%GameBoard{snakes: snakes, you_id: you_id}, :body)
-    
-  #   new_options = options
-  #     |> check_vertical_path(head, body)
-  #     |> IO.inspect(label: "avoid_self_rule - options after vertical check")
-  #     |> check_horizontal_path(head, body)
-  #     |> IO.inspect(label: "avoid_self_rule - options after horizontal check")
-      
-  #     Map.put(game_data, :options, new_options)
-    
-  # end
-  
-  # def check_if_path_in_body(%GameBoard{options: options} = game_data, head, body) do
-  #     new_options = options
-  #     |> check_vertical_path(head, body)
-  #     |> IO.inspect(label: "opponents - options after vertical check")
-  #     |> check_horizontal_path(head, body)
-  #     |> IO.inspect(label: "opponents - options after horizontal check")
-      
-  # end
