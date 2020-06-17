@@ -81,14 +81,13 @@ defmodule SupaBattleSnake do
   end
   
   
-  
   def optimal_move(game_data, game_state) do 
 
     move = game_data
     |> convert_game_data(game_state)
     |> IO.inspect(label: "optimal_move converted game_data")
     |> avoid_self()
-    |> avoid_last_move()
+    #|> avoid_last_move()
     |> avoid_wall()
     |> avoid_opponents()
     |> determine_move()
@@ -137,21 +136,16 @@ defmodule SupaBattleSnake do
   end
   
   def avoid_opponents(%GameBoard{snakes: snakes} = game_data) do
-    
-    #IO.inspect(game_data, label: "avoid_opponents initial game_data")
-    
+
     you_head = get_you(game_data, :head)
     
-    Enum.map(snakes, fn snake -> game_data
-                                  |> update_legal_moves(:up, you_head, snake.body)
-                                  |> update_legal_moves(:right, you_head, snake.body)
-                                  |> update_legal_moves(:down, you_head, snake.body)
-                                  |> update_legal_moves(:left, you_head, snake.body)
-                                  end ) 
-    #|> IO.inspect(label: "avoid_opponents -> Enum.each result")
+    combined_opponent_coords = Enum.map(snakes, fn snake -> snake.body end) |> List.flatten
     
     game_data
-    #|> IO.inspect(label: "avoid_opponents final game_data")
+    |> update_legal_moves(:up, you_head, combined_opponent_coords)
+    |> update_legal_moves(:right, you_head, combined_opponent_coords)
+    |> update_legal_moves(:down, you_head, combined_opponent_coords)
+    |> update_legal_moves(:left, you_head, combined_opponent_coords)
     
   end
   
@@ -233,7 +227,7 @@ defmodule SupaBattleSnake do
  
   def get_you(%GameBoard{snakes: snakes, you_id: you_id}) do
     you = snakes
-    |> IO.inspect(label: "all snakes")
+    #|> IO.inspect(label: "all snakes")
     |> Enum.filter(fn snake -> snake.id == you_id end)
     #|> IO.inspect(label: "you snake")
     |> List.first

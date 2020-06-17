@@ -39,7 +39,7 @@ defmodule SupaBattleSnake.Endpoint do
       case conn.body_params do
         %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
             
-            SupaBattleSnake.optimal_move(conn.body_params, :start)
+            #SupaBattleSnake.optimal_move(conn.body_params, :start)
             
             {200, "It Begins!"}
         _ -> {422, "422 - missing game data"}
@@ -55,9 +55,9 @@ defmodule SupaBattleSnake.Endpoint do
   {status, body} =
       case conn.body_params do
         %{"game" => _game_object, "turn" => turn_int, "board" => _board_object, "you" => _you_object} -> 
-            {:ok, move} = MoveAgent.get_turn_move(turn_int)
             
             SupaBattleSnake.optimal_move(conn.body_params, :move)
+            {:ok, move} = MoveAgent.get_turn_move(turn_int)
             
             {200, Poison.encode!( move )}
         _ -> { 200, Poison.encode!( "" )}
