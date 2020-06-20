@@ -120,8 +120,14 @@ defmodule SupaBattleSnake do
   end
   
   def boosted_option_exists?(options) do
-    !Enum.all?(options, fn {_k,v} -> v <= 0.5 end)
+    boosted = Enum.any?(options, fn {_k,v} -> v > 0.5 end)
+    downgraded = Enum.any?(options, fn {_k,v} -> v < 0.5 && v > 0.0 end)
+    normal = Enum.any?(options, fn {_k,v} -> v == 0.5 end)
+    
+    boosted || (downgraded && normal)
   end
+  
+
   
   def choose_adjacent_food(%GameBoard{board_food: board_food} = game_data) do
     you_head = get_you(game_data, :head)
