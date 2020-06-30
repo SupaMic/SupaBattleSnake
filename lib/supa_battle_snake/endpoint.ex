@@ -56,8 +56,8 @@ defmodule SupaBattleSnake.Endpoint do
       case conn.body_params do
         %{"game" => _game_object, "turn" => turn_int, "board" => _board_object, "you" => _you_object} -> 
             
-            SupaBattleSnake.optimal_move(conn.body_params, :move)
-            {:ok, move} = MoveAgent.get_turn_move(turn_int)
+            move = SupaBattleSnake.optimal_move(conn.body_params, :move)
+            #{:ok, move} = MoveAgent.get_turn_move(turn_int)
             
             {200, Poison.encode!( move )}
         _ -> { 200, Poison.encode!( "" )}
@@ -76,7 +76,7 @@ defmodule SupaBattleSnake.Endpoint do
             conn.body_params
             |> SupaBattleSnake.convert_game_data(:end)
             |> IO.inspect(label: "route: /end\ngame_data")
-            
+            #SupaBattleSnake.MoveAgent.remove_moves
             {200, "Game End"}
         _ -> { 200, "Game End - missing game data"}
       end

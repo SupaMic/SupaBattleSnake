@@ -82,10 +82,14 @@ defmodule SupaBattleSnake do
       |> choose_adjacent_food()
       |> determine_strategic_move()
     
-    MoveAgent.set_turn_move(game_data["turn"], %{
+    %{
         "move" => move, 
         "shout" => "moving"
-    })
+    }
+    # MoveAgent.set_turn_move(game_data["turn"], %{
+    #     "move" => move, 
+    #     "shout" => "moving"
+    # })
   end
   
   def determine_random_move(%GameBoard{up: up, right: right, down: down, left: left} = _game_data) do 
@@ -149,7 +153,7 @@ defmodule SupaBattleSnake do
   
   def boost_option(%GameBoard{up: up, right: right, down: down, left: left} = game_data, move) do
       game_data
-      |> Map.put(move, Map.fetch!(game_data, move)+0.1)
+      |> Map.put(move, Map.fetch!(game_data, move)+0.09)
   end
   
   def avoid_self(%GameBoard{} = game_data) do
@@ -157,7 +161,7 @@ defmodule SupaBattleSnake do
     body = get_you(game_data, :body)
     
     you_body = body -- [List.last(body)]
-    
+    IO.puts("SELF")
     game_data
     |> update_legal_moves(:up, you_head, you_body)
     |> update_legal_moves(:right, you_head, you_body)
@@ -167,7 +171,7 @@ defmodule SupaBattleSnake do
   
   def avoid_wall(%GameBoard{board_height: board_height} = game_data) do
     you_head = get_you(game_data, :head)
-    
+    IO.puts("WALL")
     game_data
     |> update_legal_moves(:up, you_head, wall_coords(board_height, :top))
     |> update_legal_moves(:right, you_head, wall_coords(board_height, :right))
@@ -184,11 +188,14 @@ defmodule SupaBattleSnake do
     end
   end
   
-  def avoid_opponents(%GameBoard{snakes: snakes} = game_data) do
+  def avoid_opponents(%GameBoard{snakes: snakes, you_id: you_id} = game_data) do
     you_head = get_you(game_data, :head)
     
-    combined_opponent_coords = Enum.map(snakes, fn snake -> snake.body end) |> List.flatten
-    
+    combined_opponent_coords = snakes
+                               |> Enum.filter(fn snake -> snake.id != you_id end)
+                               |> Enum.map(fn snake -> snake.body end) 
+                               |> List.flatten
+    IO.puts("OPPONENTS")
     game_data
     |> update_legal_moves(:up, you_head, combined_opponent_coords)
     |> update_legal_moves(:right, you_head, combined_opponent_coords)
@@ -200,7 +207,7 @@ defmodule SupaBattleSnake do
     you_head = get_you(game_data, :head)
     
     combined_opponent_coords = Enum.map(snakes, fn snake -> snake.head end) |> List.flatten
-    
+    IO.puts("HEADTOHEAD")
     game_data
     |> update_legal_moves(:up_ccw, you_head, combined_opponent_coords, :downgrade)
     |> update_legal_moves(:up_up, you_head, combined_opponent_coords, :downgrade)
