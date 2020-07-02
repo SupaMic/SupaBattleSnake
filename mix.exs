@@ -6,6 +6,7 @@ defmodule SupaBattleSnake.MixProject do
       app: :supa_battle_snake,
       version: "0.1.0",
       elixir: "~> 1.9",
+      config_path: "config/config.exs",  #This is the default path, just adding to be more verbose
       start_permanent: Mix.env() == :prod,
       deps: deps()
     ]

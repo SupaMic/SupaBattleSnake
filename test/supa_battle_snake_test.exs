@@ -2,9 +2,6 @@ defmodule SupaBattleSnakeTest do
   use ExUnit.Case
   doctest SupaBattleSnake
 
-  # test "greets the world" do
-  #   assert SupaBattleSnake.hello() == :world
-  # end
   
   setup do 
     game_data = %SupaBattleSnake.GameBoard{
@@ -93,4 +90,17 @@ defmodule SupaBattleSnakeTest do
   test "Check coords: you head", context do
     assert SupaBattleSnake.get_you(context[:game_data], :head) ==  %{"x" => 5, "y" => 5}
   end
+  
+  describe "Game Snake Initializations" do 
+  
+    test "Confirm Attributes" do
+      assert SupaBattleSnake.get_snake ==    %{ "apiversion" => "1", 
+                                                "author" => "supamic", 
+                                                "color" => "#ff9900",
+                                                "head" => "pixel",
+                                                "tail" => "default" }
+    end
+  
+  end
+  
 end

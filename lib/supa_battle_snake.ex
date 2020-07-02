@@ -1,13 +1,3 @@
-defmodule SupaBattleSnake.GameBoard do
-  defstruct game_id: "", timeout: 500, turn: 0, board_food: [], board_height: 0, you_id: "", snakes: [], route_state: nil, up: 0.5, right: 0.5, down: 0.5, left: 0.5
-end
-
-
-defmodule SupaBattleSnake.Snake do
-  defstruct body: [], head: %{x: 0, y: 0}, health: 100, id: "", length: 3, name: "", shout: "", you: false
-end
-
-
 defmodule SupaBattleSnake do
   @moduledoc """
   """
@@ -16,6 +6,12 @@ defmodule SupaBattleSnake do
   alias SupaBattleSnake.GameBoard
   alias SupaBattleSnake.Snake
   alias SupaBattleSnake.MoveAgent
+  
+  @apiversion "1"
+  @battlesnake_username "supamic"
+  @snake_colour "#ff9900"
+  @head_type "pixel"
+  @tail_type "default"
   
   def convert_game_data(%{"game" => %{"id" => game_id, 
                                 "timeout" => timeout_int} = _game_object, 
@@ -59,16 +55,7 @@ defmodule SupaBattleSnake do
     #|> IO.inspect(label: "list_of_snake_structs")
   end
   
-   # BattleSnake API responses
-  def get_snake do 
-    %{
-        "apiversion" => "1", 
-        "author" => "supamic", 
-        "color" => "#ff9900",
-        "head" => "pixel",
-        "tail" => "default"
-    }
-  end
+
   
   
   def optimal_move(game_data, game_state) do 
@@ -347,6 +334,18 @@ defmodule SupaBattleSnake do
     
   def is_you?(id, you_id) do
     id == you_id
+  end
+  
+  
+  # BattleSnake API root response
+  def get_snake do 
+    %{
+        "apiversion" => @apiversion, 
+        "author" => @battlesnake_username, 
+        "color" => @snake_colour,
+        "head" => @head_type,
+        "tail" => @tail_type
+    }
   end
   
 end

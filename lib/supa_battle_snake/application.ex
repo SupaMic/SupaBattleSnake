@@ -11,7 +11,7 @@ defmodule SupaBattleSnake.Application do
       Plug.Cowboy.child_spec(
         scheme: :http,
         plug: SupaBattleSnake.Endpoint,
-        options: [port: 4001]
+        options: [port: Application.fetch_env!(:supa_battle_snake, :port)]
       ), 
       SupaBattleSnake.MoveAgent
       # Starts a worker by calling: SupaBattleSnake.Worker.start_link(arg)
@@ -23,4 +23,5 @@ defmodule SupaBattleSnake.Application do
     opts = [strategy: :one_for_one, name: SupaBattleSnake.Supervisor]
     Supervisor.start_link(children, opts)
   end
+  
 end
