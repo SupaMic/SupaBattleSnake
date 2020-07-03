@@ -4,6 +4,7 @@ defmodule SupaBattleSnake.Application do
   @moduledoc false
 
   use Application
+  require Logger
 
   def start(_type, _args) do
     children = [
@@ -17,11 +18,13 @@ defmodule SupaBattleSnake.Application do
       # Starts a worker by calling: SupaBattleSnake.Worker.start_link(arg)
       # {SupaBattleSnake.Worker, arg}
     ]
-
+    Logger.info "Application Starting..."
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
     opts = [strategy: :one_for_one, name: SupaBattleSnake.Supervisor]
     Supervisor.start_link(children, opts)
   end
+  
+  
   
 end
