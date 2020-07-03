@@ -553,3 +553,14 @@ Request: POST /start
 16:40:37.566 [info] Sent 200 in 6ms
 16:40:37.739 [info] POST /end
 16:40:37.740 [info] Sent 200 in 945µs
+18:21:26.900 [info] Application Starting...
+18:22:05.762 [info] POST /start
+18:22:05.773 [info] Game Starting...
+18:22:05.781 [info] {"you":{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_bbBSKhfHK8MTm9hqBB3wddD8","health":100,"head":{"y":1,"x":5},"body":[{"y":1,"x":5},{"y":1,"x":5},{"y":1,"x":5}]},"turn":0,"game":{"timeout":500,"id":"c54f4a8f-89cc-441e-8523-c62f05cc94dd"},"board":{"width":11,"snakes":[{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_bbBSKhfHK8MTm9hqBB3wddD8","health":100,"head":{"y":1,"x":5},"body":[{"y":1,"x":5},{"y":1,"x":5},{"y":1,"x":5}]},{"shout":"","name":"Alphabit","length":3,"id":"gs_9GXddgQyfXX7FKGSJ8ryFjbB","health":100,"head":{"y":9,"x":1},"body":[{"y":9,"x":1},{"y":9,"x":1},{"y":9,"x":1}]}],"height":11,"food":[{"y":2,"x":10},{"y":0,"x":5}]}}
+18:22:05.783 [info] Sent 200 in 20ms
+18:22:10.807 [info] POST /move
+18:22:10.828 [info] Sent 200 in 21ms
+18:22:11.320 [info] POST /move
+18:22:11.329 [info] Sent 200 in 9ms
+18:22:11.834 [info] POST /end
+18:22:11.835 [info] Sent 200 in 865µs

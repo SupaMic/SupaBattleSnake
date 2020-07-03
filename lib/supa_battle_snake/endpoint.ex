@@ -40,6 +40,8 @@ defmodule SupaBattleSnake.Endpoint do
   {status, body} =
       case conn.body_params do
         %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
+            
+            Logger.info "Game Starting..."
             conn.body_params
             |> Poison.encode!()
             |> String.Chars.to_string()
