@@ -7,6 +7,7 @@ config :logger,
 # configuration for the {LoggerFileBackend, :error_log} backend
 config :logger, :log,
   path: "log/app.log",
+  metadata: [:all],
   level: :debug
 
 import_config "#{Mix.env}.exs"

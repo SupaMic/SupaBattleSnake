@@ -5,7 +5,8 @@ defmodule SupaBattleSnake.Endpoint do
   """
   
   use Plug.Router
-  alias SupaBattleSnake.MoveAgent
+  require Logger
+  #alias SupaBattleSnake.MoveAgent
   
     # This module is a Plug, that also implements it's own plug pipeline, below:
 
@@ -29,6 +30,7 @@ defmodule SupaBattleSnake.Endpoint do
   
   
   get "/" do
+    Logger.info "Server root pinged"
     conn
     |> send_resp(200, Poison.encode!( SupaBattleSnake.get_snake() ) )
   end
@@ -38,8 +40,10 @@ defmodule SupaBattleSnake.Endpoint do
   {status, body} =
       case conn.body_params do
         %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
-            
-            #SupaBattleSnake.optimal_move(conn.body_params, :start)
+            conn.body_params
+            |> Poison.encode!()
+            |> String.Chars.to_string()
+            |> Logger.info()
             
             {200, "It Begins!"}
         _ -> {422, "422 - missing game data"}
@@ -54,7 +58,7 @@ defmodule SupaBattleSnake.Endpoint do
   post "/move" do
   {status, body} =
       case conn.body_params do
-        %{"game" => _game_object, "turn" => turn_int, "board" => _board_object, "you" => _you_object} -> 
+        %{"game" => _game_object, "turn" => _turn_int, "board" => _board_object, "you" => _you_object} -> 
             
             move = SupaBattleSnake.optimal_move(conn.body_params, :move)
             #{:ok, move} = MoveAgent.get_turn_move(turn_int)
