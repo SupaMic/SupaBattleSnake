@@ -2,8 +2,7 @@ defmodule SupaBattleSnakeTest do
   use ExUnit.Case
   doctest SupaBattleSnake
 
-  
-  setup do 
+  setup do
     game_data = %SupaBattleSnake.GameBoard{
       board_food: [%{"x" => 3, "y" => 10}],
       board_height: 11,
@@ -83,24 +82,23 @@ defmodule SupaBattleSnakeTest do
       up: 0.5,
       you_id: "gs_hDf3H7F9SgyfQjKFRYGkbJRH"
     }
-    
+
     {:ok, game_data: game_data}
   end
-  
+
   test "Check coords: you head", context do
-    assert SupaBattleSnake.get_you(context[:game_data], :head) ==  %{"x" => 5, "y" => 5}
+    assert SupaBattleSnake.get_you(context[:game_data], :head) == %{"x" => 5, "y" => 5}
   end
-  
-  describe "Game Snake Initializations" do 
-  
+
+  describe "Game Snake Initializations" do
     test "Confirm Attributes" do
-      assert SupaBattleSnake.get_snake ==    %{ "apiversion" => "1", 
-                                                "author" => "supamic", 
-                                                "color" => "#ff9900",
-                                                "head" => "pixel",
-                                                "tail" => "default" }
+      assert SupaBattleSnake.get_snake() == %{
+               "apiversion" => "1",
+               "author" => "supamic",
+               "color" => "#ff9900",
+               "head" => "pixel",
+               "tail" => "default"
+             }
     end
-  
   end
-  
 end

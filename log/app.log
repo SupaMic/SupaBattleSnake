@@ -564,3 +564,380 @@ Request: POST /start
 18:22:11.329 [info] Sent 200 in 9ms
 18:22:11.834 [info] POST /end
 18:22:11.835 [info] Sent 200 in 865µs
+18:34:17.112 [info] POST /start
+18:34:17.113 [info] Game Starting...
+18:34:17.115 [info] {"you":{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_frRYPF8bF7PKB3P7tdFPHbGY","health":100,"head":{"y":1,"x":9},"body":[{"y":1,"x":9},{"y":1,"x":9},{"y":1,"x":9}]},"turn":0,"game":{"timeout":500,"id":"e26e3de9-75be-4da9-8b53-9ba60b36258b"},"board":{"width":11,"snakes":[{"shout":"","name":"Alphabit","length":3,"id":"gs_YDj7d9qjcXpphXM8t6gyd9SP","health":100,"head":{"y":5,"x":1},"body":[{"y":5,"x":1},{"y":5,"x":1},{"y":5,"x":1}]},{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_frRYPF8bF7PKB3P7tdFPHbGY","health":100,"head":{"y":1,"x":9},"body":[{"y":1,"x":9},{"y":1,"x":9},{"y":1,"x":9}]}],"height":11,"food":[{"y":6,"x":8},{"y":4,"x":2}]}}
+18:34:17.115 [info] Sent 200 in 2ms
+18:34:17.502 [info] POST /move
+18:34:17.509 [info] Sent 200 in 7ms
+18:34:17.809 [info] POST /move
+18:34:17.814 [info] Sent 200 in 5ms
+18:34:17.898 [info] POST /move
+18:34:17.902 [info] Sent 200 in 4ms
+18:34:17.987 [info] POST /move
+18:34:17.992 [info] Sent 200 in 4ms
+18:34:18.077 [info] POST /move
+18:34:18.081 [info] Sent 200 in 3ms
+18:34:18.167 [info] POST /move
+18:34:18.170 [info] Sent 200 in 3ms
+18:34:18.256 [info] POST /move
+18:34:18.266 [info] Sent 200 in 9ms
+18:34:18.346 [info] POST /move
+18:34:18.353 [info] Sent 200 in 6ms
+18:34:18.435 [info] POST /move
+18:34:18.442 [info] Sent 200 in 7ms
+18:34:18.525 [info] POST /move
+18:34:18.530 [info] Sent 200 in 5ms
+18:34:18.617 [info] POST /move
+18:34:18.621 [info] Sent 200 in 4ms
+18:34:18.708 [info] POST /move
+18:34:18.712 [info] Sent 200 in 4ms
+18:34:18.799 [info] POST /move
+18:34:18.803 [info] Sent 200 in 4ms
+18:34:18.890 [info] POST /move
+18:34:18.895 [info] Sent 200 in 4ms
+18:34:18.986 [info] POST /move
+18:34:18.997 [info] Sent 200 in 11ms
+18:34:19.077 [info] POST /move
+18:34:19.085 [info] Sent 200 in 7ms
+18:34:19.165 [info] POST /move
+18:34:19.172 [info] Sent 200 in 6ms
+18:34:19.254 [info] POST /move
+18:34:19.263 [info] Sent 200 in 9ms
+18:34:19.343 [info] POST /move
+18:34:19.348 [info] Sent 200 in 4ms
+18:34:19.435 [info] POST /move
+18:34:19.440 [info] Sent 200 in 4ms
+18:34:19.525 [info] POST /move
+18:34:19.529 [info] Sent 200 in 4ms
+18:34:19.612 [info] POST /move
+18:34:19.618 [info] Sent 200 in 5ms
+18:34:19.701 [info] POST /move
+18:34:19.705 [info] Sent 200 in 4ms
+18:34:19.790 [info] POST /move
+18:34:19.795 [info] Sent 200 in 5ms
+18:34:19.877 [info] POST /move
+18:34:19.882 [info] Sent 200 in 4ms
+18:34:19.972 [info] POST /move
+18:34:19.977 [info] Sent 200 in 5ms
+18:34:20.060 [info] POST /move
+18:34:20.065 [info] Sent 200 in 5ms
+18:34:20.151 [info] POST /move
+18:34:20.156 [info] Sent 200 in 5ms
+18:34:20.245 [info] POST /move
+18:34:20.250 [info] Sent 200 in 5ms
+18:34:20.336 [info] POST /move
+18:34:20.341 [info] Sent 200 in 5ms
+18:34:20.424 [info] POST /move
+18:34:20.428 [info] Sent 200 in 4ms
+18:34:20.514 [info] POST /move
+18:34:20.518 [info] Sent 200 in 4ms
+18:34:20.613 [info] POST /move
+18:34:20.617 [info] Sent 200 in 4ms
+18:34:20.702 [info] POST /move
+18:34:20.707 [info] Sent 200 in 4ms
+18:34:20.789 [info] POST /move
+18:34:20.794 [info] Sent 200 in 5ms
+18:34:20.883 [info] POST /move
+18:34:20.888 [info] Sent 200 in 4ms
+18:34:20.972 [info] POST /move
+18:34:20.977 [info] Sent 200 in 4ms
+18:34:21.060 [info] POST /move
+18:34:21.066 [info] Sent 200 in 5ms
+18:34:21.150 [info] POST /move
+18:34:21.155 [info] Sent 200 in 4ms
+18:34:21.242 [info] POST /move
+18:34:21.248 [info] Sent 200 in 5ms
+18:34:21.334 [info] POST /move
+18:34:21.339 [info] Sent 200 in 5ms
+18:34:21.424 [info] POST /move
+18:34:21.430 [info] Sent 200 in 5ms
+18:34:21.513 [info] POST /move
+18:34:21.518 [info] Sent 200 in 4ms
+18:34:21.603 [info] POST /move
+18:34:21.609 [info] Sent 200 in 5ms
+18:34:21.772 [info] POST /end
+18:34:21.774 [info] Sent 200 in 1ms
+18:37:19.214 [info] POST /start
+18:37:19.225 [error] #PID<0.460.0> running SupaBattleSnake.Endpoint (connection #PID<0.459.0>, stream id 1) terminated
+Server: 52.89.215.29:4001 (http)
+Request: POST /start
+** (exit) an exception was raised:
+    ** (Protocol.UndefinedError) protocol String.Chars not implemented for %{"id" => "2fe72749-536e-4321-934a-25f7f1f7e68f", "timeout" => 500} of type Map. This protocol is implemented for the following type(s): Time, Version, BitString, Atom, Integer, DateTime, NaiveDateTime, Version.Requirement, List, URI, Float, Date
+        (elixir) lib/string/chars.ex:3: String.Chars.impl_for!/1
+        (elixir) lib/string/chars.ex:22: String.Chars.to_string/1
+        (supa_battle_snake) lib/supa_battle_snake/endpoint.ex:44: anonymous fn/2 in SupaBattleSnake.Endpoint.do_match/4
+        (supa_battle_snake) lib/plug/router.ex:284: SupaBattleSnake.Endpoint.dispatch/2
+        (supa_battle_snake) lib/supa_battle_snake/endpoint.ex:1: SupaBattleSnake.Endpoint.plug_builder_call/2
+        (plug_cowboy) lib/plug/cowboy/handler.ex:19: Plug.Cowboy.Handler.init/2
+        (cowboy) /home/ubuntu/environment/battle_snake/supa_battle_snake/deps/cowboy/src/cowboy_handler.erl:37: :cowboy_handler.execute/2
+        (cowboy) /home/ubuntu/environment/battle_snake/supa_battle_snake/deps/cowboy/src/cowboy_stream_h.erl:300: :cowboy_stream_h.execute/3
+18:37:19.628 [info] POST /move
+18:37:19.636 [info] Sent 200 in 8ms
+18:37:19.966 [info] POST /move
+18:37:19.972 [info] Sent 200 in 5ms
+18:37:20.067 [info] POST /move
+18:37:20.072 [info] Sent 200 in 4ms
+18:37:20.167 [info] POST /move
+18:37:20.171 [info] Sent 200 in 4ms
+18:37:20.265 [info] POST /move
+18:37:20.270 [info] Sent 200 in 5ms
+18:37:20.368 [info] POST /move
+18:37:20.374 [info] Sent 200 in 5ms
+18:37:20.468 [info] POST /move
+18:37:20.474 [info] Sent 200 in 5ms
+18:37:20.569 [info] POST /move
+18:37:20.574 [info] Sent 200 in 5ms
+18:37:20.670 [info] POST /move
+18:37:20.676 [info] Sent 200 in 5ms
+18:37:20.774 [info] POST /move
+18:37:20.780 [info] Sent 200 in 5ms
+18:37:20.873 [info] POST /move
+18:37:20.878 [info] Sent 200 in 5ms
+18:37:20.976 [info] POST /move
+18:37:20.981 [info] Sent 200 in 4ms
+18:37:21.077 [info] POST /move
+18:37:21.082 [info] Sent 200 in 4ms
+18:37:21.177 [info] POST /move
+18:37:21.195 [info] Sent 200 in 18ms
+18:37:21.279 [info] POST /move
+18:37:21.284 [info] Sent 200 in 5ms
+18:37:21.386 [info] POST /move
+18:37:21.391 [info] Sent 200 in 5ms
+18:37:21.487 [info] POST /move
+18:37:21.493 [info] Sent 200 in 6ms
+18:37:21.586 [info] POST /move
+18:37:21.595 [info] Sent 200 in 9ms
+18:37:21.688 [info] POST /move
+18:37:21.692 [info] Sent 200 in 4ms
+18:37:21.788 [info] POST /move
+18:37:21.793 [info] Sent 200 in 4ms
+18:37:21.888 [info] POST /move
+18:37:21.893 [info] Sent 200 in 5ms
+18:37:21.991 [info] POST /end
+18:37:21.992 [info] Sent 200 in 1ms
+18:39:20.634 [info] POST /start
+18:39:20.635 [info] Game Starting... 451be916-a6a8-4da9-8ebb-cabc40a4656f
+18:39:20.637 [info] {"you":{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_Hb6qCCKRpcPWjbc6XXv3jkHM","health":100,"head":{"y":1,"x":9},"body":[{"y":1,"x":9},{"y":1,"x":9},{"y":1,"x":9}]},"turn":0,"game":{"timeout":500,"id":"451be916-a6a8-4da9-8ebb-cabc40a4656f"},"board":{"width":11,"snakes":[{"shout":"","name":"Alphabit","length":3,"id":"gs_G3BWh7pqhv34fDXbH8g9rjGV","health":100,"head":{"y":1,"x":5},"body":[{"y":1,"x":5},{"y":1,"x":5},{"y":1,"x":5}]},{"shout":"","name":"Heuristic Harry","length":3,"id":"gs_Hb6qCCKRpcPWjbc6XXv3jkHM","health":100,"head":{"y":1,"x":9},"body":[{"y":1,"x":9},{"y":1,"x":9},{"y":1,"x":9}]}],"height":11,"food":[{"y":4,"x":3},{"y":2,"x":5}]}}
+18:39:20.637 [info] Sent 200 in 2ms
+18:39:21.053 [info] POST /move
+18:39:21.065 [info] Sent 200 in 12ms
+18:39:21.374 [info] POST /move
+18:39:21.379 [info] Sent 200 in 4ms
+18:39:21.470 [info] POST /move
+18:39:21.475 [info] Sent 200 in 4ms
+18:39:21.570 [info] POST /move
+18:39:21.576 [info] Sent 200 in 5ms
+18:39:21.668 [info] POST /move
+18:39:21.674 [info] Sent 200 in 5ms
+18:39:21.769 [info] POST /move
+18:39:21.774 [info] Sent 200 in 4ms
+18:39:21.867 [info] POST /move
+18:39:21.873 [info] Sent 200 in 5ms
+18:39:21.962 [info] POST /move
+18:39:21.967 [info] Sent 200 in 4ms
+18:39:22.061 [info] POST /move
+18:39:22.065 [info] Sent 200 in 4ms
+18:39:22.156 [info] POST /move
+18:39:22.161 [info] Sent 200 in 4ms
+18:39:22.254 [info] POST /move
+18:39:22.260 [info] Sent 200 in 5ms
+18:39:22.348 [info] POST /move
+18:39:22.354 [info] Sent 200 in 5ms
+18:39:22.443 [info] POST /move
+18:39:22.449 [info] Sent 200 in 5ms
+18:39:22.540 [info] POST /move
+18:39:22.545 [info] Sent 200 in 5ms
+18:39:22.635 [info] POST /move
+18:39:22.649 [info] Sent 200 in 13ms
+18:39:22.729 [info] POST /move
+18:39:22.736 [info] Sent 200 in 6ms
+18:39:22.825 [info] POST /move
+18:39:22.835 [info] Sent 200 in 10ms
+18:39:22.919 [info] POST /move
+18:39:22.927 [info] Sent 200 in 8ms
+18:39:23.015 [info] POST /move
+18:39:23.027 [info] Sent 200 in 11ms
+18:39:23.110 [info] POST /move
+18:39:23.115 [info] Sent 200 in 5ms
+18:39:23.205 [info] POST /move
+18:39:23.216 [info] Sent 200 in 10ms
+18:39:23.313 [info] POST /move
+18:39:23.322 [info] Sent 200 in 9ms
+18:39:23.408 [info] POST /move
+18:39:23.416 [info] Sent 200 in 7ms
+18:39:23.514 [info] POST /move
+18:39:23.522 [info] Sent 200 in 8ms
+18:39:23.610 [info] POST /move
+18:39:23.615 [info] Sent 200 in 4ms
+18:39:23.705 [info] POST /move
+18:39:23.710 [info] Sent 200 in 5ms
+18:39:23.800 [info] POST /move
+18:39:23.805 [info] Sent 200 in 5ms
+18:39:23.899 [info] POST /move
+18:39:23.904 [info] Sent 200 in 4ms
+18:39:23.994 [info] POST /move
+18:39:23.999 [info] Sent 200 in 4ms
+18:39:24.091 [info] POST /move
+18:39:24.095 [info] Sent 200 in 4ms
+18:39:24.186 [info] POST /move
+18:39:24.190 [info] Sent 200 in 4ms
+18:39:24.282 [info] POST /move
+18:39:24.287 [info] Sent 200 in 4ms
+18:39:24.379 [info] POST /move
+18:39:24.385 [info] Sent 200 in 5ms
+18:39:24.479 [info] POST /move
+18:39:24.484 [info] Sent 200 in 5ms
+18:39:24.579 [info] POST /move
+18:39:24.585 [info] Sent 200 in 5ms
+18:39:24.673 [info] POST /move
+18:39:24.678 [info] Sent 200 in 5ms
+18:39:24.768 [info] POST /move
+18:39:24.774 [info] Sent 200 in 6ms
+18:39:24.864 [info] POST /move
+18:39:24.869 [info] Sent 200 in 5ms
+18:39:24.962 [info] POST /move
+18:39:24.967 [info] Sent 200 in 5ms
+18:39:25.058 [info] POST /move
+18:39:25.063 [info] Sent 200 in 5ms
+18:39:25.152 [info] POST /move
+18:39:25.157 [info] Sent 200 in 5ms
+18:39:25.248 [info] POST /move
+18:39:25.253 [info] Sent 200 in 5ms
+18:39:25.343 [info] POST /move
+18:39:25.348 [info] Sent 200 in 4ms
+18:39:25.438 [info] POST /move
+18:39:25.443 [info] Sent 200 in 5ms
+18:39:25.540 [info] POST /move
+18:39:25.546 [info] Sent 200 in 5ms
+18:39:25.636 [info] POST /move
+18:39:25.641 [info] Sent 200 in 4ms
+18:39:25.739 [info] POST /move
+18:39:25.744 [info] Sent 200 in 4ms
+18:39:25.834 [info] POST /move
+18:39:25.839 [info] Sent 200 in 5ms
+18:39:25.930 [info] POST /move
+18:39:25.934 [info] Sent 200 in 4ms
+18:39:26.027 [info] POST /move
+18:39:26.031 [info] Sent 200 in 4ms
+18:39:26.124 [info] POST /move
+18:39:26.129 [info] Sent 200 in 5ms
+18:39:26.218 [info] POST /move
+18:39:26.223 [info] Sent 200 in 4ms
+18:39:26.317 [info] POST /move
+18:39:26.323 [info] Sent 200 in 5ms
+18:39:26.413 [info] POST /move
+18:39:26.419 [info] Sent 200 in 5ms
+18:39:26.508 [info] POST /move
+18:39:26.513 [info] Sent 200 in 5ms
+18:39:26.603 [info] POST /move
+18:39:26.610 [info] Sent 200 in 6ms
+18:39:26.699 [info] POST /move
+18:39:26.705 [info] Sent 200 in 6ms
+18:39:26.793 [info] POST /move
+18:39:26.799 [info] Sent 200 in 6ms
+18:39:26.888 [info] POST /move
+18:39:26.894 [info] Sent 200 in 6ms
+18:39:26.984 [info] POST /move
+18:39:26.989 [info] Sent 200 in 5ms
+18:39:27.080 [info] POST /move
+18:39:27.085 [info] Sent 200 in 5ms
+18:39:27.176 [info] POST /move
+18:39:27.182 [info] Sent 200 in 5ms
+18:39:27.272 [info] POST /move
+18:39:27.278 [info] Sent 200 in 5ms
+18:39:27.366 [info] POST /move
+18:39:27.372 [info] Sent 200 in 5ms
+18:39:27.463 [info] POST /move
+18:39:27.468 [info] Sent 200 in 5ms
+18:39:27.559 [info] POST /move
+18:39:27.565 [info] Sent 200 in 5ms
+18:39:27.654 [info] POST /move
+18:39:27.660 [info] Sent 200 in 6ms
+18:39:27.756 [info] POST /move
+18:39:27.762 [info] Sent 200 in 5ms
+18:39:27.851 [info] POST /move
+18:39:27.857 [info] Sent 200 in 5ms
+18:39:27.947 [info] POST /move
+18:39:27.952 [info] Sent 200 in 5ms
+18:39:28.043 [info] POST /move
+18:39:28.048 [info] Sent 200 in 5ms
+18:39:28.141 [info] POST /move
+18:39:28.147 [info] Sent 200 in 5ms
+18:39:28.237 [info] POST /move
+18:39:28.242 [info] Sent 200 in 5ms
+18:39:28.332 [info] POST /move
+18:39:28.338 [info] Sent 200 in 5ms
+18:39:28.427 [info] POST /move
+18:39:28.433 [info] Sent 200 in 5ms
+18:39:28.529 [info] POST /move
+18:39:28.534 [info] Sent 200 in 5ms
+18:39:28.629 [info] POST /move
+18:39:28.635 [info] Sent 200 in 6ms
+18:39:28.727 [info] POST /move
+18:39:28.733 [info] Sent 200 in 6ms
+18:39:28.821 [info] POST /move
+18:39:28.828 [info] Sent 200 in 6ms
+18:39:28.916 [info] POST /move
+18:39:28.922 [info] Sent 200 in 6ms
+18:39:29.011 [info] POST /move
+18:39:29.018 [info] Sent 200 in 6ms
+18:39:29.106 [info] POST /move
+18:39:29.112 [info] Sent 200 in 5ms
+18:39:29.204 [info] POST /move
+18:39:29.210 [info] Sent 200 in 5ms
+18:39:29.299 [info] POST /move
+18:39:29.305 [info] Sent 200 in 6ms
+18:39:29.401 [info] POST /move
+18:39:29.407 [info] Sent 200 in 6ms
+18:39:29.495 [info] POST /move
+18:39:29.502 [info] Sent 200 in 6ms
+18:39:29.590 [info] POST /move
+18:39:29.597 [info] Sent 200 in 6ms
+18:39:29.688 [info] POST /move
+18:39:29.694 [info] Sent 200 in 6ms
+18:39:29.784 [info] POST /move
+18:39:29.790 [info] Sent 200 in 5ms
+18:39:29.883 [info] POST /move
+18:39:29.889 [info] Sent 200 in 5ms
+18:39:29.978 [info] POST /move
+18:39:29.984 [info] Sent 200 in 6ms
+18:39:30.079 [info] POST /move
+18:39:30.085 [info] Sent 200 in 6ms
+18:39:30.180 [info] POST /move
+18:39:30.186 [info] Sent 200 in 6ms
+18:39:30.276 [info] POST /move
+18:39:30.283 [info] Sent 200 in 6ms
+18:39:30.375 [info] POST /move
+18:39:30.381 [info] Sent 200 in 6ms
+18:39:30.471 [info] POST /move
+18:39:30.477 [info] Sent 200 in 5ms
+18:39:30.566 [info] POST /move
+18:39:30.572 [info] Sent 200 in 5ms
+18:39:30.663 [info] POST /move
+18:39:30.668 [info] Sent 200 in 5ms
+18:39:30.758 [info] POST /move
+18:39:30.764 [info] Sent 200 in 5ms
+18:39:30.853 [info] POST /move
+18:39:30.859 [info] Sent 200 in 5ms
+18:39:30.947 [info] POST /move
+18:39:30.954 [info] Sent 200 in 6ms
+18:39:31.307 [info] POST /move
+18:39:31.321 [info] Sent 200 in 14ms
+18:39:31.408 [info] POST /move
+18:39:31.422 [info] Sent 200 in 14ms
+18:39:31.512 [info] POST /move
+18:39:31.518 [info] Sent 200 in 5ms
+18:39:31.611 [info] POST /move
+18:39:31.616 [info] Sent 200 in 4ms
+18:39:31.714 [info] POST /move
+18:39:31.719 [info] Sent 200 in 4ms
+18:39:31.819 [info] POST /move
+18:39:31.825 [info] Sent 200 in 5ms
+18:39:31.920 [info] POST /move
+18:39:31.925 [info] Sent 200 in 5ms
+18:39:32.108 [info] POST /end
+18:39:32.109 [info] Sent 200 in 1ms
+02:31:52.165 [info] Application Starting...
+02:33:25.542 [info] Application Starting...
+23:39:51.583 [info] Application Starting...

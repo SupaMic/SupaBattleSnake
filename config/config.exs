@@ -10,4 +10,4 @@ config :logger, :log,
   metadata: [:all],
   level: :debug
 
-import_config "#{Mix.env}.exs"
+import_config "#{Mix.env()}.exs"
