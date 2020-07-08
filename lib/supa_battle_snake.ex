@@ -5,10 +5,7 @@ defmodule SupaBattleSnake do
   """
   alias SupaBattleSnake.GameBoardStruct, as: GameBoard
   alias SupaBattleSnake.SnakeStruct, as: Snake
-  alias SupaBattleSnake.GamePieces
-  alias SupaBattleSnake.LegalMoves
-  alias SupaBattleSnake.Strategy
-  alias SupaBattleSnake.Store
+  alias SupaBattleSnake.{GamePieces, LegalMoves, Strategy, Store}
   # alias SupaBattleSnake.MoveAgent
 
   @apiversion "1"

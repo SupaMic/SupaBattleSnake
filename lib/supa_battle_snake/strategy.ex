@@ -4,8 +4,7 @@ defmodule SupaBattleSnake.Strategy do
   """
 
   alias SupaBattleSnake.GameBoardStruct, as: GameBoard
-  alias SupaBattleSnake.GamePieces
-  alias SupaBattleSnake.LegalMoves
+  alias SupaBattleSnake.{GamePieces, LegalMoves}
 
   def choose_adjacent_food(%GameBoard{board_food: board_food} = game_data) do
     you_head = GamePieces.get_you(game_data, :head)
