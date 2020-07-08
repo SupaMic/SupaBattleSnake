@@ -10,7 +10,7 @@ defmodule SupaBattleSnake.Application do
     children = [
       # Use Plug.Cowboy.child_spec/3 to register our endpoint as a plug
       Plug.Cowboy.child_spec(
-        scheme: :http,
+        scheme: Application.fetch_env!(:supa_battle_snake, :scheme),
         plug: SupaBattleSnake.Endpoint,
         options: [port: Application.fetch_env!(:supa_battle_snake, :port)]
       ),
