@@ -7,13 +7,12 @@ defmodule SupaBattleSnake.Application do
   require Logger
   
   @port Application.fetch_env!(:supa_battle_snake, :port)
-  @scheme Application.fetch_env!(:supa_battle_snake, :scheme)
 
   def start(_type, _args) do
     children = [
       # Use Plug.Cowboy.child_spec/3 to register our endpoint as a plug
       Plug.Cowboy.child_spec(
-        scheme: @scheme,
+        scheme: :http,
         plug: SupaBattleSnake.Endpoint,
         options: [port: to_port(@port)]
       ),
