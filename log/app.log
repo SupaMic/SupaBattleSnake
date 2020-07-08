@@ -947,3 +947,37 @@ Request: POST /start
 18:28:10.658 [info] Sent 200 in 2ms
 18:28:10.809 [info] GET /favicon.ico
 18:28:10.809 [info] Sent 404 in 60µs
+21:51:29.439 [info] Application Starting...
+21:53:30.701 [info] Application supa_battle_snake exited: exited in: SupaBattleSnake.Application.start(:normal, [])
+    ** (EXIT) an exception was raised:
+        ** (ArgumentError) could not start Cowboy2 adapter, missing option :key/:keyfile
+            (plug_cowboy) lib/plug/cowboy.ex:310: Plug.Cowboy.fail/1
+            (plug_cowboy) lib/plug/cowboy.ex:62: Plug.Cowboy.args/4
+            (plug_cowboy) lib/plug/cowboy.ex:170: Plug.Cowboy.child_spec/1
+            (supa_battle_snake) lib/supa_battle_snake/application.ex:12: SupaBattleSnake.Application.start/2
+            (kernel) application_master.erl:277: :application_master.start_it_old/4
+21:54:11.314 [info] Application Starting...
+21:54:25.032 [info] Application Starting...
+22:02:22.242 [info] Application Starting...
+22:02:22.256 [info] Application supa_battle_snake exited: SupaBattleSnake.Application.start(:normal, []) returned an error: shutdown: failed to start child: {:ranch_listener_sup, SupaBattleSnake.Endpoint.HTTP}
+    ** (EXIT) shutdown: failed to start child: :ranch_acceptors_sup
+        ** (EXIT) :badarg
+22:03:03.591 [info] Application Starting...
+22:09:43.121 [info] Application Starting...
+22:34:13.770 [info] Application supa_battle_snake exited: exited in: SupaBattleSnake.Application.start(:normal, [])
+    ** (EXIT) an exception was raised:
+        ** (ArgumentError) could not start Cowboy2 adapter, missing option :key/:keyfile
+            (plug_cowboy) lib/plug/cowboy.ex:310: Plug.Cowboy.fail/1
+            (plug_cowboy) lib/plug/cowboy.ex:62: Plug.Cowboy.args/4
+            (plug_cowboy) lib/plug/cowboy.ex:170: Plug.Cowboy.child_spec/1
+            (supa_battle_snake) lib/supa_battle_snake/application.ex:15: SupaBattleSnake.Application.start/2
+            (kernel) application_master.erl:277: :application_master.start_it_old/4
+22:34:55.298 [info] Application Starting...
+22:35:16.612 [info] Application supa_battle_snake exited: exited in: SupaBattleSnake.Application.start(:normal, [])
+    ** (EXIT) an exception was raised:
+        ** (ArgumentError) could not start Cowboy2 adapter, missing option :key/:keyfile
+            (plug_cowboy) lib/plug/cowboy.ex:310: Plug.Cowboy.fail/1
+            (plug_cowboy) lib/plug/cowboy.ex:62: Plug.Cowboy.args/4
+            (plug_cowboy) lib/plug/cowboy.ex:170: Plug.Cowboy.child_spec/1
+            (supa_battle_snake) lib/supa_battle_snake/application.ex:15: SupaBattleSnake.Application.start/2
+            (kernel) application_master.erl:277: :application_master.start_it_old/4
