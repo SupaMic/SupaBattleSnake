@@ -1,4 +1,7 @@
 defmodule SupaBattleSnake.MoveAgent do
+
+  @moduledoc false
+
   use Agent
 
   def start_link do

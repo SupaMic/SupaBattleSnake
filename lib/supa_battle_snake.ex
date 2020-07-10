@@ -1,11 +1,13 @@
 defmodule SupaBattleSnake do
   @moduledoc """
+    The internal API access point and main move pipeline configuration
   """
   @doc """
   """
+  
   alias SupaBattleSnake.GameBoardStruct, as: GameBoard
+  alias SupaBattleSnake.{GamePieces, LegalMoves, Store, Strategy}
   alias SupaBattleSnake.SnakeStruct, as: Snake
-  alias SupaBattleSnake.{GamePieces, LegalMoves, Strategy, Store}
   # alias SupaBattleSnake.MoveAgent
 
   @apiversion "1"
@@ -95,9 +97,8 @@ defmodule SupaBattleSnake do
       "move" => move,
       "shout" => "moving"
     }
-
     # MoveAgent.set_turn_move(game_data["turn"], %{
-    #     "move" => move, 
+    #     "move" => move,
     #     "shout" => "moving"
     # })
   end

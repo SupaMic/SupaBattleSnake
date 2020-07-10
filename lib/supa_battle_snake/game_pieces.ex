@@ -27,8 +27,8 @@ defmodule SupaBattleSnake.GamePieces do
 
   def wall_coords(board_height, location) do
     case location do
-      :top -> Enum.map(-1..board_height, fn x -> %{"x" => x, "y" => 11} end)
-      :right -> Enum.map(-1..board_height, fn y -> %{"x" => 11, "y" => y} end)
+      :top -> Enum.map(-1..board_height, fn x -> %{"x" => x, "y" => board_height} end)
+      :right -> Enum.map(-1..board_height, fn y -> %{"x" => board_height, "y" => y} end)
       :bottom -> Enum.map(-1..board_height, fn x -> %{"x" => x, "y" => -1} end)
       :left -> Enum.map(-1..board_height, fn y -> %{"x" => -1, "y" => y} end)
     end

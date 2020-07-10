@@ -78,7 +78,7 @@ defmodule SupaBattleSnake.Endpoint do
         _ ->
           {200, Poison.encode!("")}
       end
-
+    
     send_resp(conn, status, body)
   end
 
