@@ -58,8 +58,7 @@ defmodule SupaBattleSnake.GamePieces do
         %{"x" => x_coord + 1, "y" => y_coord + 1} |> IO.inspect(label: "future_coords(:up_cw)")
 
       :right_ccw ->
-        %{"x" => x_coord + 1, "y" => y_coord + 1}
-        |> IO.inspect(label: "future_coords(:right_ccw)")
+        %{"x" => x_coord + 1, "y" => y_coord + 1} |> IO.inspect(label: "future_coords(:right_ccw)")
 
       :right_right ->
         %{"x" => x_coord + 2, "y" => y_coord} |> IO.inspect(label: "future_coords(:right_right)")
